@@ -1,0 +1,47 @@
+{
+  "name": "@stdlib/assert-is-absolute-path",
+  "version": "0.0.0",
+  "description": "Test if a value is an absolute path.",
+  "license": "Apache-2.0",
+  "main": "./bundle.js",
+  "homepage": "https://stdlib.io",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stdlib-js/assert-is-absolute-path.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stdlib-js/stdlib/issues"
+  },
+  "keywords": [
+    "stdlib",
+    "stdassert",
+    "assertion",
+    "assert",
+    "utilities",
+    "utility",
+    "utils",
+    "util",
+    "is",
+    "is-absolute",
+    "is-path",
+    "path",
+    "absolute",
+    "filesystem",
+    "file",
+    "filepath",
+    "filename",
+    "dir",
+    "directory",
+    "dirpath",
+    "check",
+    "validate",
+    "valid",
+    "isvalid",
+    "is-valid",
+    "test"
+  ],
+  "funding": {
+    "type": "patreon",
+    "url": "https://www.patreon.com/athan"
+  }
+}
