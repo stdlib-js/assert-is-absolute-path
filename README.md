@@ -48,13 +48,13 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import isAbsolutePath from 'https://cdn.jsdelivr.net/gh/stdlib-js/assert-is-absolute-path@deno/mod.js';
+import isAbsolutePath from 'https://cdn.jsdelivr.net/gh/stdlib-js/assert-is-absolute-path@v0.1.0-deno/mod.js';
 ```
 
 You can also import the following named exports from the package:
 
 ```javascript
-import { posix, win32 } from 'https://cdn.jsdelivr.net/gh/stdlib-js/assert-is-absolute-path@deno/mod.js';
+import { posix, win32 } from 'https://cdn.jsdelivr.net/gh/stdlib-js/assert-is-absolute-path@v0.1.0-deno/mod.js';
 ```
 
 #### isAbsolutePath( value )
@@ -119,7 +119,7 @@ bool = isAbsolutePath.win32( 'foo\\bar\\baz' );
 <!-- eslint no-undef: "error" -->
 
 ```javascript
-import isAbsolutePath from 'https://cdn.jsdelivr.net/gh/stdlib-js/assert-is-absolute-path@deno/mod.js';
+import isAbsolutePath from 'https://cdn.jsdelivr.net/gh/stdlib-js/assert-is-absolute-path@v0.1.0-deno/mod.js';
 
 var bool = isAbsolutePath.posix( '/foo/bar/baz' );
 // returns true
