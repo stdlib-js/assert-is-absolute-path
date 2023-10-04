@@ -48,13 +48,13 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import isAbsolutePath from 'https://cdn.jsdelivr.net/gh/stdlib-js/assert-is-absolute-path@esm/index.mjs';
+import isAbsolutePath from 'https://cdn.jsdelivr.net/gh/stdlib-js/assert-is-absolute-path@v0.1.1-esm/index.mjs';
 ```
 
 You can also import the following named exports from the package:
 
 ```javascript
-import { posix, win32 } from 'https://cdn.jsdelivr.net/gh/stdlib-js/assert-is-absolute-path@esm/index.mjs';
+import { posix, win32 } from 'https://cdn.jsdelivr.net/gh/stdlib-js/assert-is-absolute-path@v0.1.1-esm/index.mjs';
 ```
 
 #### isAbsolutePath( value )
@@ -124,7 +124,7 @@ bool = isAbsolutePath.win32( 'foo\\bar\\baz' );
 <body>
 <script type="module">
 
-import isAbsolutePath from 'https://cdn.jsdelivr.net/gh/stdlib-js/assert-is-absolute-path@esm/index.mjs';
+import isAbsolutePath from 'https://cdn.jsdelivr.net/gh/stdlib-js/assert-is-absolute-path@v0.1.1-esm/index.mjs';
 
 var bool = isAbsolutePath.posix( '/foo/bar/baz' );
 // returns true
