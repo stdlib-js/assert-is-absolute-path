@@ -41,25 +41,31 @@ limitations under the License.
 
 <!-- /.intro -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/assert-is-absolute-path
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
+-   If you are using Deno, visit the [`deno` branch][deno-url].
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
+-   To use as a general utility for the command line, install the corresponding [CLI package][cli-section] globally.
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import isAbsolutePath from 'https://cdn.jsdelivr.net/gh/stdlib-js/assert-is-absolute-path@deno/mod.js';
-```
-The previous example will load the latest bundled code from the deno branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/assert-is-absolute-path/tags). For example,
-
-```javascript
-import isAbsolutePath from 'https://cdn.jsdelivr.net/gh/stdlib-js/assert-is-absolute-path@v0.1.1-deno/mod.js';
-```
-
-You can also import the following named exports from the package:
-
-```javascript
-import { posix, win32 } from 'https://cdn.jsdelivr.net/gh/stdlib-js/assert-is-absolute-path@deno/mod.js';
+var isAbsolutePath = require( '@stdlib/assert-is-absolute-path' );
 ```
 
 #### isAbsolutePath( value )
@@ -67,7 +73,7 @@ import { posix, win32 } from 'https://cdn.jsdelivr.net/gh/stdlib-js/assert-is-ab
 Tests if a `value` is an absolute path.
 
 ```javascript
-import IS_WINDOWS from 'https://cdn.jsdelivr.net/gh/stdlib-js/assert-is-windows@deno/mod.js';
+var IS_WINDOWS = require( '@stdlib/assert-is-windows' );
 
 var bool;
 if ( IS_WINDOWS ) {
@@ -124,7 +130,7 @@ bool = isAbsolutePath.win32( 'foo\\bar\\baz' );
 <!-- eslint no-undef: "error" -->
 
 ```javascript
-import isAbsolutePath from 'https://cdn.jsdelivr.net/gh/stdlib-js/assert-is-absolute-path@deno/mod.js';
+var isAbsolutePath = require( '@stdlib/assert-is-absolute-path' );
 
 var bool = isAbsolutePath.posix( '/foo/bar/baz' );
 // returns true
@@ -179,7 +185,98 @@ bool = isAbsolutePath.win32( '' );
 
 <!-- /.examples -->
 
+* * *
 
+<section class="cli">
+
+## CLI
+
+<section class="installation">
+
+## Installation
+
+To use as a general utility, install the CLI package globally
+
+```bash
+npm install -g @stdlib/assert-is-absolute-path-cli
+```
+
+</section>
+
+<!-- CLI usage documentation. -->
+
+<section class="usage">
+
+### Usage
+
+```text
+Usage: is-absolute-path [options] [<path>]
+
+Options:
+
+  -h,    --help                Print this message.
+  -V,    --version             Print the package version.
+         --platform name       Platform: 'win32' or 'posix'.
+         --split sep           Delimiter for stdin data. Default: '/\\r?\\n/'.
+```
+
+</section>
+
+<!-- /.usage -->
+
+<!-- CLI usage notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
+
+<section class="notes">
+
+### Notes
+
+-   If the split separator is a [regular expression][mdn-regexp], ensure that the `split` option is either properly escaped or enclosed in quotes.
+
+    ```bash
+    # Not escaped...
+    $ echo -n $'/foo/bar/baz\n./docs/repl.txt' | is-absolute-path --split /\r?\n/
+
+    # Escaped...
+    $ echo -n $'/foo/bar/baz\n./docs/repl.txt' | is-absolute-path --split /\\r?\\n/
+    ```
+
+-   The implementation ignores trailing delimiters.
+
+</section>
+
+<!-- /.notes -->
+
+<section class="examples">
+
+### Examples
+
+```bash
+$ is-absolute-path /foo/bar/baz --platform=posix
+true
+```
+
+To use as a [standard stream][standard-streams],
+
+```bash
+$ echo -n './docs/repl.txt' | is-absolute-path
+false
+```
+
+By default, when used as a [standard stream][standard-streams], the implementation assumes newline-delimited data. To specify an alternative delimiter, set the `split` option.
+
+```bash
+$ echo -n '/foo/bar/baz\t./docs/repl.txt' | is-absolute-path --platform=posix --split '\t'
+true
+false
+```
+
+</section>
+
+<!-- /.examples -->
+
+</section>
+
+<!-- /.cli -->
 
 <!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
 
@@ -204,7 +301,7 @@ bool = isAbsolutePath.win32( '' );
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -234,8 +331,8 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 [npm-image]: http://img.shields.io/npm/v/@stdlib/assert-is-absolute-path.svg
 [npm-url]: https://npmjs.org/package/@stdlib/assert-is-absolute-path
 
-[test-image]: https://github.com/stdlib-js/assert-is-absolute-path/actions/workflows/test.yml/badge.svg?branch=v0.1.1
-[test-url]: https://github.com/stdlib-js/assert-is-absolute-path/actions/workflows/test.yml?query=branch:v0.1.1
+[test-image]: https://github.com/stdlib-js/assert-is-absolute-path/actions/workflows/test.yml/badge.svg?branch=main
+[test-url]: https://github.com/stdlib-js/assert-is-absolute-path/actions/workflows/test.yml?query=branch:main
 
 [coverage-image]: https://img.shields.io/codecov/c/github/stdlib-js/assert-is-absolute-path/main.svg
 [coverage-url]: https://codecov.io/github/stdlib-js/assert-is-absolute-path?branch=main
@@ -274,7 +371,7 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 
 <!-- <related-links> -->
 
-[@stdlib/assert/is-relative-path]: https://github.com/stdlib-js/assert-is-relative-path/tree/deno
+[@stdlib/assert/is-relative-path]: https://github.com/stdlib-js/assert-is-relative-path
 
 <!-- </related-links> -->
 
